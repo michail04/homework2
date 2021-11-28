@@ -1,18 +1,19 @@
+from pprint import pprint
 import os
+
 path = os.path.join(os.getcwd(), 'recipes.txt')
 
-with open(path) as file:
-    file = open('recipes.txt', encoding="utf8")
+with open(path, encoding="utf8") as cookbook:
     # print(file.read())
     result = {}
-    for dish in file:
+    for dish in cookbook:
         dish_name = dish.strip()
-        count_ingr = int(file.readline().strip())
+        count_ingr = int(cookbook.readline().strip())
+        structure = []
         for items in range(count_ingr):
-            structure = []
-            name, qantity, unit = file.readline().split('|')
-            structure.append({'name': name, 'qantity': qantity, 'unit': unit})
-        result = dish_name, structure
-        file.readline()
-        print(result)
+            name, qantity, measure = cookbook.readline().split(" | ")
+            structure.append({'ingridient': name.strip(), 'qantity': int(qantity.strip()), 'measure': measure.strip()})
+        result[dish_name] = structure
+        cookbook.readline()
+    pprint(result)
 
