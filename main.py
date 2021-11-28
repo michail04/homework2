@@ -7,3 +7,4 @@ with open('recipes.txt') as file:
 # file= open('recipes.txt')
 # x=file.read()
 # print(x)
+file = open(file, encoding="utf8")
