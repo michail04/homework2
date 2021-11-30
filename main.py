@@ -28,8 +28,8 @@ with open(path, encoding="utf8") as file:
         list = {}
 
         for dish in dishes:
-            for ingr in (menu[dish]):
-                count_dish_name_ingr = dict[ingr['ingredient'], {'measure': ingr['measure'], 'quantity': int(ingr['quantity']) * person_count}]
+            for ingr in menu[dish]:
+                count_dish_name_ingr = dict([ingr['ingredient'], {'measure': ingr['measure'], 'quantity': int(ingr['quantity']) * person_count}])
                 if list.get(ingr['ingredient']):
                     more_ingr = (list['ingredient']['quantity']) + (count_dish_name_ingr['ingredient']['quantity'])
                 else:
