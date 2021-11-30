@@ -21,8 +21,21 @@ with open(path, encoding="utf8") as file:
     print('Cook book=')
     pprint(cook_book)
 
+    def create_order_list():
+        person_count = int(input('Введите количество человек: '))
+        dish_order = input('Введите блюда в расчете на одного человека (через запятую): ')
+        ...
 
-def create_order_list():
-    person_count = int(input('Введите количество человек: '))
-    dish_name = input('Введите блюда в расчете на одного человека (через запятую): ')
 
+    def get_shop_list_by_dishes(dishes, person_count):
+        menu = cook_book
+        list = {}
+        try:
+            for dish in dishes:
+                for item in (menu[dish]):
+                    count_ingr = dict[item['ingredient'], 'quantity': int(item['quantity']) * {person_count}, 'measure': item['measure']]
+                    if list.get(item['ingredient_name']):
+
+
+        except KeyError:
+            print('Такого блюда у нас нет')
