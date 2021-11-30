@@ -23,7 +23,7 @@ with open(path, encoding="utf8") as file:
 
     def create_order_list():
         person_count = int(input('Введите количество человек: '))
-        dish_order = input('Введите блюда в расчете на одного человека (через запятую): ')
+        dish_order = input('Введите название блюда: ')
         ...
 
 
